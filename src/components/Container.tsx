@@ -3,22 +3,18 @@ import React from 'react'
 function Container() {
     return (
         <div>
-
-            Todo
-
-            {/* Add dynamic number  */} items left 
-
-            All
-            Active
-            Completed
-
-            Clear Completed
-
-            Drag and drop to reorder list
-
-            <div className="attribution">
-                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-                Coded by <a href="#">Your Name Here</a>.
+            <input type='text' />
+            <div className='list'>
+                <div className='todos'></div>
+                <div className='nav'>
+                    <div className='left'>items left </div>
+                    <ul>
+                        <li>All</li>
+                        <li>Active</li>
+                        <li>Completed</li>
+                    </ul>
+                    <div className='clear '>Clear Completed</div>
+                </div>
             </div>
         </div>
     )

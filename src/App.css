@@ -1,4 +1,71 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(./images/bg-desktop-light.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: hsl(235, 21%, 11%);
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: .5ch;
+  font-size: 3em;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  gap: 1rem;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(235, 24%, 19%, .5);
+}
+
+.App {
+  font-family: 'Josefin Sans';
+}
+
+.list, input {
+  background-color: hsl(235, 24%, 19%);
+  border-radius: .25em;
+  margin: 1rem;
+  min-width: 32rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  columns: 3;
+  gap: 3rem;
+  padding: 0 1rem;
+}
+
 .attribution {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 50px;
   font-size: 11px;
   text-align: center;
 }
