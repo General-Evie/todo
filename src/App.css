@@ -4,15 +4,21 @@
     box-sizing: border-box;
 }
 
+
 html {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url(./images/bg-desktop-light.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
-  background-color: hsl(235, 21%, 11%);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 h1 {
@@ -38,6 +44,10 @@ p {
   justify-content: center;
   align-items: center;
   color: hsl(235, 24%, 19%, .5);
+}
+
+input {
+  border: none;
 }
 
 .App {

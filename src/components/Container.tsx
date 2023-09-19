@@ -1,20 +1,33 @@
-import React from 'react'
+import React, { FC, useState } from 'react'
+import List from './List'
+import { SunIcon } from './svgs/SunSvg'
+import { MoonIcon } from './svgs/MoonSvg'
 
-function Container() {
+interface ContainerProps {}
+
+const Container: FC<ContainerProps> = () => {
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+    };
+
     return (
         <div>
-            <input type='text' />
-            <div className='list'>
-                <div className='todos'></div>
-                <div className='nav'>
-                    <div className='left'>items left </div>
-                    <ul>
-                        <li>All</li>
-                        <li>Active</li>
-                        <li>Completed</li>
-                    </ul>
-                    <div className='clear '>Clear Completed</div>
+            <header>
+                <h1>Todo</h1>
+                <div onClick={toggleDarkMode}>
+                    {isDarkMode ? <SunIcon /> : <MoonIcon />}   
                 </div>
+            </header>
+            <List />
+
+            <p>Drag and drop to reorder list</p>
+
+            <div className="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+                Coded by <a href="https://github.com/General-Evie" target="_blank">Evie Dickman</a>.
             </div>
         </div>
     )
