@@ -1,15 +1,21 @@
+:root {
+  --background-light: url(./images/bg-desktop-light.jpg);
+  --background-dark: url(./images/bg-desktop-dark.jpg);
+}
+
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-
 html {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: var(--background-light);
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -18,7 +24,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  min-width: 32rem;
 }
 
 h1 {
@@ -43,11 +49,18 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: hsl(235, 24%, 19%, .5);
+  margin-top: 5rem;
+  font-size: 14px;
+  color: hsl(234, 11%, 52%);
 }
 
 input {
   border: none;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  columns: 2;
+  width: 85%;
+  outline: none;
 }
 
 .App {
@@ -56,9 +69,42 @@ input {
 
 .list, input {
   background-color: hsl(235, 24%, 19%);
-  border-radius: .25em;
-  margin: 1rem;
-  min-width: 32rem;
+  border-bottom-right-radius: .25rem;
+  border-top-right-radius: .25rem;
+  min-height: 3rem;
+}
+
+.input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  columns: 2;
+}
+
+.check-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(235, 24%, 19%);
+  padding: 1rem;
+  width: 15%;
+  height: 3rem;
+  border-bottom-left-radius: .25rem;
+  border-top-left-radius: .25rem;
+}
+
+.check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  left: 0;
+  margin-left: .5rem;
+  background: linear-gradient(120deg, hsl(192, 100%, 67%),hsl(280, 87%, 65%)), 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid;
 }
 
 .nav {
@@ -67,7 +113,8 @@ input {
   align-items: center;
   columns: 3;
   gap: 3rem;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
+  color: hsl(234, 11%, 52%);
 }
 
 .attribution {
@@ -82,4 +129,14 @@ input {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+.focused-input, .focused-input::placeholder{
+  color: white;
+  font-family: 'Josefin Sans';
+}
+
+.blurred-input, .blurred-input::placeholder{
+  color: hsl(234, 11%, 52%);
+  font-family: 'Josefin Sans';
 }
