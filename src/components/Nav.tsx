@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { CheckIcon } from './svgs/CheckSvg'
+import TodoList from './TodoList';
+import CustomCheckbox from './CustomCheckBox'
 
-interface NavProps {
-    todo: string[];
-}
 
-const Nav: React.FC<NavProps> = ({ todo }) => {
+interface NavProps {}
+
+const Nav: React.FC<NavProps> = () => {
     const [isFocused, setIsFocused] = useState<boolean>(false);
+    const [todo, setTodo] = useState(['todo', 'todo 2'])
 
     const handleFocus = () => {
         setIsFocused(true);
@@ -24,18 +26,18 @@ const Nav: React.FC<NavProps> = ({ todo }) => {
         <div>
             <div className='input'>
                 <div className='check-column'>
-                    <div className='check'><CheckIcon /></div>
+                    <div className='add-button'></div>
                     <div className='input-text'></div>
                 </div>
                 <input
                     type='text'
-                    className={inputClass}
+                    className={`${inputClass} main-input`}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                     placeholder={inputText} />
             </div>
             <div className='list'>
-                <div className='todos'></div>
+                <div className='todos'><TodoList todo={todo} /></div>
                 <div className='nav'>
                     <div className='left'>items left </div>
                     <ul>

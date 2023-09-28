@@ -6,8 +6,7 @@ import { MoonIcon } from './svgs/MoonSvg'
 interface ContainerProps {}
 
 const Container: FC<ContainerProps> = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    const [todo, setTodo] = useState(['todo', 'todo2'])
+    const [isDarkMode, setIsDarkMode] = useState(true);
 
 
     const toggleDarkMode = () => {
@@ -34,7 +33,7 @@ const Container: FC<ContainerProps> = () => {
                     {isDarkMode ? <SunIcon /> : <MoonIcon />}   
                 </div>
             </header>
-            <Nav todo ={todo}/>
+            <Nav />
 
             <p>Drag and drop to reorder list</p>
         </div>
